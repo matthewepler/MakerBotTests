@@ -5,11 +5,9 @@ void build(){
   vl3 = new UVertexList();
   
   for(int i=0; i<numPoints; i++){
-   float r = random(150, 250);
-   verts[i] = r;
-   vl1.add(cos(radians(i*spacing))*r, sin(radians(i*spacing))*r, 0);
-   vl2.add(cos(radians(i*spacing))*r, sin(radians(i*spacing))*r, y1);
-   vl3.add(cos(radians(i*spacing))*r*0.75, sin(radians(i*spacing))*r*0.75, y2);
+   vl1.add(cos(radians(i*spacing))*verts[i], sin(radians(i*spacing))*verts[i], 0);
+   vl2.add(cos(radians(i*spacing))*verts[i], sin(radians(i*spacing))*verts[i], y1);
+   vl3.add(cos(radians(i*spacing))*verts[i]*0.75, sin(radians(i*spacing))*verts[i]*0.75, y2);
   }
   
   vl1.add(cos(radians(0))*verts[0], sin(radians(0))*verts[0], 0);
@@ -23,5 +21,4 @@ void build(){
   geo.triangleFan(vl1, false);
   geo.triangleFan(vl3, true);
   
-  //geo.writeSTL(this, "test.stl");
 }

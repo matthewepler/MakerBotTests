@@ -17,6 +17,10 @@ int y2 = 100;
 void setup(){
  size(600,600,OPENGL);
  verts = new float[numPoints];
+ for(int i=0; i<numPoints; i++){
+   float r = random(150, 250);
+   verts[i] = r;
+ }
  build();
  nav = new UNav3D(this);
  nav.set(width/2, height/2, 0);
@@ -33,13 +37,29 @@ void draw(){
 
 void keyPressed(){
  if(key == 'u'){
-  y1++;
+  y1 += 10;
   build();
  } 
  
   if(key == 'j'){
-  y1--;
+  y1 -= 10;
   build();
  } 
+ 
+  if(key == 'i'){
+  y2 += 10;
+  build();
+ } 
+ 
+  if(key == 'k'){
+  y2 -= 10;
+  build();
+ } 
+ 
+ if(key == 's'){
+    geo.writeSTL(this, "test-####.stl");
+    fill(255,0,0);
+    println("STL save complete!");
+ }
 }
 
