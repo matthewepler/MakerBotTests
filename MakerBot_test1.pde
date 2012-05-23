@@ -27,8 +27,6 @@ void setup(){
    float r = random(150, 250);
    verts[i] = r;
   }
- //height1 = new Scrollbar(50,100,150,25,10,100);
-// height2 = new Scrollbar(50,150,150,25,10,100);
  
  build();
  nav = new UNav3D(this);
@@ -43,11 +41,6 @@ void draw(){
  nav.doTransforms(); 
  geo.draw(this);
  popMatrix();
- 
-// height1.update(mouseX, mouseY);
-// height1.display();
-// height2.update(mouseX, mouseY);
-// height2.display(); 
  
  textSize(18);
  text("Control Bottom Height with 'u' & 'j'", 50, 100);
