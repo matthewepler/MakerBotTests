@@ -10,9 +10,9 @@ void build(){
    vl3.add(cos(radians(i*spacing))*verts[i]*0.75, sin(radians(i*spacing))*verts[i]*0.75, y3);
   }
   
-  vl1.add(cos(radians(0))*verts[0], sin(radians(0))*verts[0], y1);
-  vl2.add(cos(radians(0))*verts[0], sin(radians(0))*verts[0], y2);
-  vl3.add(cos(radians(0))*verts[0]*0.75, sin(radians(0))*verts[0]*0.75, y3); 
+  vl1.add(cos(radians(0))*verts[0], sin(radians(0))*verts[0], 0);
+  vl2.add(cos(radians(0))*verts[0], sin(radians(0))*verts[0], 50);
+  vl3.add(cos(radians(0))*verts[0]*0.75, sin(radians(0))*verts[0]*0.75, 100); 
   
   geo = new UGeometry();
   geo.quadStrip(vl1, vl2);
