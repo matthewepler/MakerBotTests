@@ -5,9 +5,9 @@ void build(){
   vl3 = new UVertexList();
   
   for(int i=0; i<numPoints; i++){
-   vl1.add(cos(radians(i*spacing))*verts[i], sin(radians(i*spacing))*verts[i], 0);
-   vl2.add(cos(radians(i*spacing))*verts[i], sin(radians(i*spacing))*verts[i], y1);
-   vl3.add(cos(radians(i*spacing))*verts[i]*0.75, sin(radians(i*spacing))*verts[i]*0.75, y2);
+   vl1.add(cos(radians(i*spacing))*verts[i], sin(radians(i*spacing))*verts[i],y1);
+   vl2.add(cos(radians(i*spacing))*verts[i], sin(radians(i*spacing))*verts[i], y2);
+   vl3.add(cos(radians(i*spacing))*verts[i]*0.75, sin(radians(i*spacing))*verts[i]*0.75, y3);
   }
   
   vl1.add(cos(radians(0))*verts[0], sin(radians(0))*verts[0], 0);

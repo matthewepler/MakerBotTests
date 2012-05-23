@@ -13,8 +13,9 @@ UNav3D nav;
 float[] verts;
 int numPoints = 36;
 int spacing = 10;
-int y1 = 50;
-int y2 = 100;
+int y1 = 0;
+int y2 = 50;
+int y3 = 100;
 
 Scrollbar height1;
 Scrollbar height2;
@@ -42,10 +43,13 @@ void draw(){
  geo.draw(this);
  popMatrix();
  
+ textSize(22);
+ text("Control Keys", 50, 25);
  textSize(18);
- text("Control Bottom Height with 'u' & 'j'", 50, 100);
- text("Control Top Height with 'i' & 'k'", 50, 150);
- text("Save STL by pressing 's'",50, 200);
+ text("Bottom Height: u / j", 50, 100);
+ text("Middle Height: i / k", 50, 150);
+ text("Top Height: o / l", 50, 200);
+ text("Save STL: s",50, 300);
 }
 
 void keyPressed(){
@@ -66,6 +70,16 @@ void keyPressed(){
  
   if(key == 'k'){
   y2 -= 5;
+  build();
+ } 
+ 
+ if(key == 'o'){
+  y3 += 5;
+  build();
+ } 
+ 
+  if(key == 'l'){
+  y3 -= 5;
   build();
  } 
  
