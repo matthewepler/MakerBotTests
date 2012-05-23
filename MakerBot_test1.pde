@@ -10,6 +10,9 @@ UGeometry geo; // the shape to be printed
 UNav3D nav;
 float[] verts;
 int numPoints = 36;
+int spacing = 10;
+int y1 = 50;
+int y2 = 100;
 
 void setup(){
  size(600,600,OPENGL);
@@ -24,7 +27,19 @@ void draw(){
  fill(255);
  lights();
  
- nav.doTransforms(); // 
+ nav.doTransforms(); 
  geo.draw(this);     
+}
+
+void keyPressed(){
+ if(key == 'u'){
+  y1++;
+  build();
+ } 
+ 
+  if(key == 'j'){
+  y1--;
+  build();
+ } 
 }
 
